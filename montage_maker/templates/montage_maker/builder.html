@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+        <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    </head>
+
+    <body>
+
+    <div class="container">
+
+            <form action="{% url 'montage_maker:montagify' %}" method="post" width="100%">
+            {% csrf_token %}
+            <input type="hidden" name="montageElementContainer" value={{uid}}>
+
+            {% for montageElement in montageElementContainer.montageelement_set.all %}
+            <div class="video-element" width="100%">
+                <div width="80%">
+                    <video controls autoplay width='100%' height='40%'>
+                        <source src="{{MEDIA_URL}}{{montageElement.video_file}}" type="video/mp4"></source>
+                    </video>
+                </div>
+
+                <div width='20%'>
+                    Start point:  min: <input name = "start-min-{{montageElement.video_file}}" type="number" max=60 value="0"> sec: <input name = "start-sec-{{montageElement.video_file}}" type="number" max=60 min="1" value="1"> </br>
+                    End point:    min: <input name = "end-min-{{montageElement.video_file}}" type="number" max=60 value="0"> sec: <input name = "end-sec-{{montageElement.video_file}}" type="number" max=60 min="1" value="1">
+                </div>
+            </div>
+                {% endfor %}
+
+            <input type="submit" value="Build">
+            </form>
+
+        </div>
+    </body>
+</html>

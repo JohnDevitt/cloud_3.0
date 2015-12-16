@@ -1,0 +1,16 @@
+tqdm/_tqdm.py,sha256=uWfDvVjJlga8Ml-3TUbuhTtMDi45GeZ8fJj_eZRjWLQ,20104
+tqdm/_tqdm_gui.py,sha256=cvNKvfpbmYg06Uq9c0NHEdBmZ_QfpX7UXwaraNYvI4E,11088
+tqdm/_utils.py,sha256=ljFwA55wOg40oMgIwxLmw6_7XVaLlw8yKR1kKjruyHw,2776
+tqdm/_version.py,sha256=TULnX-x-7dljPV_sbASt2wf8GLZ6z0GqeUc2J0csvS0,198
+tqdm/__init__.py,sha256=6QNjLbTtdVuKf94-40s9iE8h3aQi1954Cr1mPH36IJA,336
+tqdm-3.1.4.dist-info/DESCRIPTION.rst,sha256=mDlQHD5kTbRsrW7XE2jnMkELV7teiH_0GfTg1af25UQ,8816
+tqdm-3.1.4.dist-info/METADATA,sha256=CF-XjrUjsaYONqfH8_lFV-JRKmVslhBL-AsioXvKrVs,10562
+tqdm-3.1.4.dist-info/metadata.json,sha256=lcEZwfO6hZ3JB3XAvElsTKS7-QrCFEuZNMjsl5feVWk,1550
+tqdm-3.1.4.dist-info/RECORD,,
+tqdm-3.1.4.dist-info/top_level.txt,sha256=NLiUJNfmc9At15s7JURiwvqMEjUi9G5PMGRrmMYzNSM,5
+tqdm-3.1.4.dist-info/WHEEL,sha256=56WjMPRUEpmb30QaTzVbQCpri5lzKGby5HLDkAMQeIU,116
+tqdm/_tqdm_gui.pyc,,
+tqdm/_utils.pyc,,
+tqdm/__init__.pyc,,
+tqdm/_tqdm.pyc,,
+tqdm/_version.pyc,,

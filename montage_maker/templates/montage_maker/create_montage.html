@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		<link href="{{ STATIC_URL }}css/ea_base.css" rel="stylesheet" type="text/css" media="screen" /
+	</head>
+
+	<body>
+
+		<div class="header" width="100%" height="100px" color="blue">
+
+		</div>
+
+		<div class="container">
+
+			</br>
+			</br>
+			</br>
+			</br>
+
+			<div class="jumbotron">
+				{% load filetransfers %}
+				<form action="{% url 'montage_maker:create_montage' %}" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					{% render_upload_data upload_data %}
+					<p>Creating a montage is easy. First, let's give your montage a title. </p>
+					<div class="input-group input-group-lg">
+						<span class="input-group-addon" id="basic-addon1">Montage Title:</span>
+						{{ form.title }}
+					</div>
+
+					<p>Next, place all the video files that you wish to use in the montage in a single folder on you computer. When you've done upload your files by clicking on the "Browse.." button. You can select more than 1 video by using the ctrl button to select multiple files and can have a maximum of 5 videos files.</p>
+					<div>{{ form.files }}</div>
+
+					<p>When you've given your montage a name and selected the files you wish to use click on the next button to continue on the second step of montification. </p>
+					<div width = 100%><input type="submit" value="Upload" class="btn btn-primary" float="right"/></div>
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html>
